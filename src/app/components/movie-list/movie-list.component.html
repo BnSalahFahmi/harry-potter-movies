@@ -1,5 +1,18 @@
-<div class="container mt-2">
-  <ul class="list-group list-group-flush">
+<div class="container ps-5 pe-5 mt-2">
+  <div class="row col-12 mb-3">
+    <div class="card bg-body-secondary">
+      <div class="card-body">
+        <h5 class="card-title h6">Filters</h5>
+        <div class="d-flex align-items-center">
+          <label class="d-block">Title </label>
+          <input type="text" class="form-control-md h-50" [formControl]="titleFilterControl">
+          <label class="d-block">Release year </label>
+          <input type="number" class="form-control-md h-50" [formControl]="releaseYearFilterControl">
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="list-group list-group-flush ps-2">
     @for (movie of movies$ | async; track movie.id) {
       <li class="mb-3">
         <app-movie-item [movie]="movie"></app-movie-item>
