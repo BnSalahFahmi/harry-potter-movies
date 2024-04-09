@@ -1,0 +1,11 @@
+<div class="container mt-2">
+  <ul class="list-group list-group-flush">
+    @for (movie of movies$ | async; track movie.id) {
+      <li class="mb-3">
+        <app-movie-item [movie]="movie"></app-movie-item>
+      </li>
+    } @empty {
+      No movies found
+    }
+  </ul>
+</div>

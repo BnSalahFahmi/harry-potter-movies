@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-9">
+    <h6 class="mb-1">{{ movie.title }}</h6>
+    <small class="text-secondary d-block ms-2">
+      <span class="me-3">Release date: {{ movie.release_date }}</span>
+      <span class="me-3">Budget: {{ movie.budget | currency }}</span>
+      <span class="me-3">Duration: {{ movie.duration | duration }}</span>
+    </small>
+  </div>
+  <div class="col-3 text-end">
+    <button class="btn btn-md border" id="{{movie.id}}">Details</button>
+  </div>
+</div>
