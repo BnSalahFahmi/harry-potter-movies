@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from '../models/movie';
+import { MovieDetails } from '../models/movie-details';
 
 const baseUrl = '/movies';
 
@@ -15,5 +16,9 @@ export class MovieService {
 
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(baseUrl);
+  }
+
+  getMovie(id: string): Observable<MovieDetails> {
+    return this.http.get<MovieDetails>(`${baseUrl}/${id}`);
   }
 }

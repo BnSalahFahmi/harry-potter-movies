@@ -8,6 +8,12 @@ export const routes: Routes = [
     )
   },
   {
+    path: 'movies/:movieId',
+    loadComponent: () => import('./components/movie-details/movie-details.component').then(
+      (module) => module.MovieDetailsComponent
+    )
+  },
+  {
     path: '**',
     redirectTo: 'movies',
     pathMatch: 'full'
